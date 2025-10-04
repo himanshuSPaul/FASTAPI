@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+
+"""Define a root ("/") endpoint """
 @app.get("/")
-async def read_root():
-    return {"Hello": "World"}
+def root_path():
+    return "This is The root path  of APi"

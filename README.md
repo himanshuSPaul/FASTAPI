@@ -1,17 +1,19 @@
---Instal venv
+## **Set up Virtual Envirnment** ##
+
+**Install Virtual Envirnment**  
 python -m venv venv
 
---Activate Virtual Envirnment
+**Activate Virtual Envirnment**  
 .\venv\Scripts\activate
 
---Install fastapi and uvicorn package
+**Install fastapi and uvicorn package**  
 pip install fastapi uvicorn
 
---Get into This path
-(venv) D:\Learning\VSCode\FastAPI\FASTAPI\YTLearning\code
 
---Run uvicorn server
+## **Activate Virtual Env**
+cd  D:\Learning\VSCode\FastAPI\FASTAPI  
+.\venv\Scripts\activate
+
+## **Execute the App**  
+cd YTLearning\code  
 uvicorn main:app --reload
-
---URL
-http://127.0.0.1:8000
