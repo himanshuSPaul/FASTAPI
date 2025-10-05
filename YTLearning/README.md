@@ -59,5 +59,6 @@ Video :17 Handle Respose Status Code
 Video :18 Delet operartion of CRUD
 > Delete post based on input post id . While deleteing handle appropeate return Status code . If Requested post id not avaialble raise HTTPException
 
-
+Video :19 Update operartion of CRUD
+> Update content based on input post id. While updating, if input post id is not present then raise HTTP Not found exception
 

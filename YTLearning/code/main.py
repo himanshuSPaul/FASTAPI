@@ -86,3 +86,23 @@ def delete_post_by_id(input_id :int):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
                             detail=f"Could not locate any post with id :{input_id}")
 
+@app.put("/posts/{input_id}")
+def update_post_by_id(input_id: int, input_post:Post):
+    """ Search index of post to be updated """
+    index_of_post_to_be_delted =None 
+    for index, post in enumerate(my_posts):
+        if post['id']==input_id:
+            index_of_post_to_be_delted = index
+
+    if index_of_post_to_be_delted is not None:
+        """ Convert Input Payload to dict """
+        new_post_dict = input_post.dict()
+        print("new_post_dict :", new_post_dict )
+        """ Create dict with id and post payload"""
+        new_post_dict['id']= input_id
+        """ Update my_posts at found index with new dict"""
+        my_posts[index_of_post_to_be_delted] = new_post_dict
+        return f"Updated Post id :{input_id} with content :{new_post_dict}" 
+    else :
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
+                            detail=f"Could not locate any post with id :{input_id}")
