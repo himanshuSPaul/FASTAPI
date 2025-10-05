@@ -59,11 +59,30 @@ def get_post_by_id(input_id :int,response: Response):
     # else :
     #     response.status_code = status.HTTP_404_NOT_FOUND #404
     #     return {"Error Message":f"Could not locate any post with id :{input_id}"}
-
-
     
 
 @app.get("/posts/get/latest")
 def get_latest_post():
     latest_post = my_posts[-1]
     return {"Latest Post": latest_post}
+
+
+@app.delete("/posts/{input_id}",status_code=status.HTTP_204_NO_CONTENT)
+def delete_post_by_id(input_id :int):
+    """Search Index of post to be delelted """
+    index_of_post_to_delete = None
+    print("Searching For post Id to delete :", input_id)
+    for index, post in enumerate(my_posts):
+        print(f"Input Post id :{input_id} type : {type(input_id)}  post id :{post['id']} post id type :{type(post['id'])}")
+        if post['id']==input_id:
+            index_of_post_to_delete = index
+            print(f"Found post id {input_id} at index :{index_of_post_to_delete}")
+            
+    """If index found then delete the post otherwise raise HTTP exception """
+    if index_of_post_to_delete is not None:
+            my_posts.pop(index_of_post_to_delete)
+            return Response(status_code=status.HTTP_204_NO_CONTENT)
+    else :
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
+                            detail=f"Could not locate any post with id :{input_id}")
+

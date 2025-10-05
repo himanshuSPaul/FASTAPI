@@ -56,6 +56,8 @@ Video :17 Handle Respose Status Code
     - When requested post is created , then send 201 HHTP status code.
     - When requested post is 
 
+Video :18 Delet operartion of CRUD
+> Delete post based on input post id . While deleteing handle appropeate return Status code . If Requested post id not avaialble raise HTTPException
 
 
 
