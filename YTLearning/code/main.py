@@ -1,5 +1,5 @@
 from typing import Optional
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, status, HTTPException
 from fastapi.params import Body
 from pydantic import BaseModel
 
@@ -39,17 +39,28 @@ def get_latest_post():
 
 
 @app.get("/posts/{input_id}")
-def get_post_by_id (input_id :int):
+def get_post_by_id(input_id :int,response: Response):
     result = None
     print("Searching For post Id :", input_id)
     for post in my_posts:
         print(f"Input Post id :{input_id} type : {type(input_id)}  post id :{post['id']} post id type :{type(post['id'])}")
         if post['id']==input_id:
             result = post
+    # Raise HTTP Exception If post not found
     if result:
         return {"Post": post}
-    else:
-        return {"Error Message":f"Could not find any post with id :{input_id}"}
+    else :
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
+                            detail=f"Could not locate any post with id :{input_id}")
+                     
+    # Other way to handle above logic using HTTPException
+    # if result:
+    #     return {"Post": post}
+    # else :
+    #     response.status_code = status.HTTP_404_NOT_FOUND #404
+    #     return {"Error Message":f"Could not locate any post with id :{input_id}"}
+
+
     
 
 @app.get("/posts/get/latest")
