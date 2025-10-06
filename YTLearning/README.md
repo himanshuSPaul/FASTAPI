@@ -1,6 +1,10 @@
 **Course URL**  
 https://www.youtube.com/playlist?list=PL8VzFQ8k4U1L5QpSapVEzoSfob-4CR8zM
 
+
+**Git Repo**
+Self  : <https://github.com/himanshuSPaul/FASTAPI>
+
 ## **Execute the code**
 
 **Get into This path**  
@@ -9,9 +13,8 @@ https://www.youtube.com/playlist?list=PL8VzFQ8k4U1L5QpSapVEzoSfob-4CR8zM
 **Run uvicorn server**  
 uvicorn main:app --reload
 
-**URL**  
-<http://127.0.0.1:8000>
-
+**API URL**      <http://127.0.0.1:8000>   
+**Swagger Url**  <http://127.0.0.1:8000/docs#/>
 
 ## **Asignment**  
 Video :8
@@ -62,3 +65,6 @@ Video :18 Delet operartion of CRUD
 Video :19 Update operartion of CRUD
 > Update content based on input post id. While updating, if input post id is not present then raise HTTP Not found exception
 
+Video 20: FAST APi documentation
+Video 21: Moving code to src folder 
+Video 22 to 37 : Basics Of Postgres Database and SQL 
