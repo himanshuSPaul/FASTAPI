@@ -18,3 +18,19 @@ D:.
 ├───config
 ├───scripts
 └───tests
+
+
+
+# Test Config Parser
+```
+cd D:\Learning\VSCode\FastAPI\FASTAPI\Proj-Prdct-Inv-Mngmnt  
+python app/utils/config.py
+```
+
+Expected Output 
+```
+Config File Path : D:\Learning\VSCode\FastAPI\FASTAPI\Proj-Prdct-Inv-Mngmnt\config\config.ini      
+ConfigFile Exists : True
+Avaialbel Section in Config File : ['app', 'database', 'features']
+application_name: inventory_api
+```
