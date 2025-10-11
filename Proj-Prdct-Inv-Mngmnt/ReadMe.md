@@ -34,3 +34,17 @@ ConfigFile Exists : True
 Avaialbel Section in Config File : ['app', 'database', 'features']
 application_name: inventory_api
 ```
+
+or 
+```
+python -m app.utils.config
+```
+Expected Output 
+```
+(venv) (venv) D:\Learning\VSCode\FastAPI\FASTAPI\Proj-Prdct-Inv-Mngmnt
+> python -m app.utils.config
+Config File Path : D:\Learning\VSCode\FastAPI\FASTAPI\Proj-Prdct-Inv-Mngmnt\config\config.ini
+ConfigFile Exists : True
+Avaialbel Section in Config File : ['app', 'database', 'features']
+Application Name: inventory_api
+(venv) (venv) D:\Learning\VSCode\FastAPI\FASTAPI\Proj-Prdct-Inv-Mngmnt

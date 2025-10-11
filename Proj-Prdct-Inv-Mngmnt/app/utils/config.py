@@ -27,8 +27,8 @@ def get_config() -> ConfigParser:
     return _CONFIG
 
 # # --------- Convenience accessors ---------
-# def app_log_level() -> str:
-#     return get_config().get("app", "log_level", fallback="INFO").upper()
+def app_log_level() -> str:
+    return get_config().get("app", "log_level", fallback="INFO").upper()
 
 def app_name() -> str:
     return get_config().get("app", "application_name", fallback="Not Found In Config File")
