@@ -6,10 +6,14 @@ from configparser import ConfigParser
 
 _CONFIG: ConfigParser | None = None
 
+
+def _root_dir() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
 def _default_config_path() -> Path:
     # Config File will be in project_root/config/config.ini (relative to this file)
-    project_root_dir = Path(__file__).resolve().parents[2]
-    config_dir = project_root_dir / "config"
+    config_dir = _root_dir() / "config"
     config_file = config_dir / "config.ini"
     return config_file
 
