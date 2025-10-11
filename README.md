@@ -8,7 +8,8 @@ python -m venv venv
 
 **Install fastapi and uvicorn package**  
 pip install fastapi uvicorn
-
+pip install uvicorn
+pip install psycopg
 
 ## **Activate Virtual Env**
 cd  D:\Learning\VSCode\FastAPI\FASTAPI  
